@@ -1,5 +1,13 @@
 
 
+#### 微信小程序的路径：
+
+
+
+D:\sourcecode\opensource\BCSCLG\eachwcyp\gitee\Eachbuy_EndUserMini_JXWC
+
+
+
 ####    如何重启服务器：
 
    cd /home/admintalu/application

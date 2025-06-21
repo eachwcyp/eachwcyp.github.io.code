@@ -18,11 +18,12 @@ cd D:\sourcecode\opensource\BCSCLG\eachwcyp\gitee\Business-API_jxwc
 
 git pull &&  git add . && git commit -m"submit code by winJobAuto update" && git push || git push 
 
-cd   D:\sourcecode\opensource\BCSCLG\eachwcyp\github.io.code
+cd  D:\sourcecode\opensource\BCSCLG\eachwcyp\eachwcyp.github.io.code
 
 git pull &&  git add . && git commit -m"submit code by winJobAuto update" && git push || git push
 
 
-cd D:\sourcecode\opensource\BCSCLG\eachwcyp\github.io
+cd  D:\sourcecode\opensource\BCSCLG\eachwcyp\eachwcyp.github.io
+
 
 git pull &&  git add . && git commit -m"submit code by winJobAuto update" && git push || git push
