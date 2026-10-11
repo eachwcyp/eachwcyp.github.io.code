@@ -1,0 +1,52 @@
+#!/bin/bash
+# ============================================================================
+# 金信文创商城 · 生产环境密钥配置文件（模板）
+# ============================================================================
+# 文件位置（生产服务器）：/etc/profile.d/jdc51.sh
+# 权限要求：chmod 600 / chown root:root
+# 加载方式：登录服务器时自动 source，或手动 source /etc/profile.d/jdc51.sh
+# ----------------------------------------------------------------------------
+# ⚠️  本文件是 EXAMPLE 模板（含占位符），可入库
+# ⚠️  真实文件 jdc51.sh 在 .gitignore 中，禁止 commit
+# ⚠️  所有密钥值请从云端控制台获取（OSS / WECOM / WECHAT_PAY）
+# ⚠️  MySQL / Redis / Druid 密码在阿里云 RDS / 自建机房的凭据系统
+# ============================================================================
+
+# ---------- 数据库 ----------
+export MYSQL_PASSWORD='实际密码（阿里云 RDS 控制台获取）'
+
+# ---------- 缓存 ----------
+export REDIS_PASSWORD='实际密码（Redis 实例配置）'
+
+# ---------- 阿里云 OSS ----------
+# accessKeyId 前缀 LTAI 开头
+export OSS_ACCESS_KEY_ID='LTAI5xx'
+# accessKeySecret 在 RAM 控制台"AccessKey"页面创建/查看
+export OSS_ACCESS_KEY_SECRET='实际密钥'
+
+# ---------- 企业微信 ----------
+# corpsecret 在"企业微信管理后台 → 应用管理 → 自建应用 → 密钥"
+export WECOM_CORP_SECRET='实际密钥'
+
+# ---------- 微信支付 ----------
+# API v3 密钥在"微信支付商户平台 → API 安全 → APIv3 密钥"
+export WECHAT_PAY_KEY='实际密钥'
+
+# ---------- Druid 监控 ----------
+# 监控后台 /actuator/druid 登录密码（任意设定，但需要强度足够）
+export DRUID_PASSWORD='实际密码'
+
+# ============================================================================
+# 加载方式：
+#   1. 服务器登录时自动 source（已放进 /etc/profile.d/，默认会加载）
+#   2. 手工 source：source /etc/profile.d/jdc51.sh
+#   3. Java 启动时通过 System.getenv() 读取，无需额外配置
+#
+# 验证方式：
+#   env | grep -E "MYSQL_PASSWORD|REDIS_PASSWORD|OSS_ACCESS_KEY|WECOM_CORP|WECHAT_PAY|DRUID_PASSWORD"
+#
+# 紧急撤销（密钥泄露时）：
+#   1. 立即在云端控制台禁用/重置对应 AccessKey 或密钥
+#   2. 编辑本文件替换新值
+#   3. 运行：sh /home/admintalu/application/Restart-eaechbuy51-module-system-prod.sh restart
+# ============================================================================

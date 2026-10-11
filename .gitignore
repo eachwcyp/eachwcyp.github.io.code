@@ -1,0 +1,29 @@
+# 凭据类文件
+jdc51.sh
+*.env
+*.env.local
+*.env.prod
+prod-secrets.env
+*.key
+*.pem
+*.p12
+
+# 用户私密
+*password*
+*secret*
+
+# IDE / OS
+.DS_Store
+.idea/
+.vscode/
+*.iml
+*.log
+
+# Node
+node_modules/
+dist/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
